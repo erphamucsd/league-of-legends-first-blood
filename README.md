@@ -33,3 +33,34 @@ columns:
 | golddiffat15 | The difference in gold between a player and their lane opponent at the 10 minute mark. |
 | golddiffat15 | The difference in gold between a player and their lane opponent at the 15 minute mark. |
 | earnedgold | The amount of gold that a player earned without including the passive income. |
+
+## Cleaning and EDA
+### Data Cleaning
+In order to prepare the data for analysis, several steps were taken to clean the
+data properly. The first step was to convert all of the 0/1 columns to boolean
+columns for easier querying. This was especially useful since the firstbloodkill
+column was originally a 0/1 column. Changing this column and all other similar
+columns allows for quick querying. In order to preserve the NaN values, these 
+steps were taken:
+1.  Define a function to return True, False, or NaN depending on the input given.
+2.  For each column, do an inplace assignment with the defined function applied to the original column.
+3.  Final result should be a column with all 1s as True, all 0s as False, and NaNs unmodified.
+
+The final step of cleaning was to remove the lines of data that contained the 
+summary for each team. The data was generated in such a way that the first 10 
+rows of data are for each individual player that played in the given match, and 
+the last two rows are the respective summary data for both teams. This 
+information was not particularly useful for my analysis, and not removing them 
+would have introduced several NaN values that simply are not needed for 
+analysis. By removing the summary rows, we can also drop several other columns
+that contain data only for the summary rows. In order to do this:
+1.  Identify columns in which the value is NaN for only summary rows, and a regular value for player rows. In this case, "playername" was used.
+2.  Querying the data for all rows in which "playername" is not a NaN value.
+3.  Drop columns for which every single value is a NaN value within the queried DataFrame.
+
+### Univariate Analysis
+<iframe src="assets/killsat10bar.html" width=800 height=600 frameBorder=0></iframe>
+
+## Assessment of Missingness
+
+## Hypothesis Test
