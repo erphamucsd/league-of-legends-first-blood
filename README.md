@@ -22,10 +22,14 @@ columns:
 
 | Column Name | Description |
 |-------------|-------------|
-| firstbloodkill | Indicates whether or not the player was the one to draw first
-blood|
-| killsat10 | The number of kills that a player has at the 10 minute mark | 
-| killsat15 | The number of kills that a player has at the 15 minute mark |
-| kills | The number of kills that a player has by the end of the game |
-| xpdiffat10 | The difference in xp between a player and their lane opponent at
-the 10 minute mark |
+| firstbloodkill | Indicates whether or not a player was the one to draw first blood. |
+| position | Indicates what role a player played during that game. |
+| result | Indicates whether or not a player won the game. |
+| killsat10 | The number of kills that a player has at the 10 minute mark. | 
+| killsat15 | The number of kills that a player has at the 15 minute mark. |
+| kills | The number of kills that a player has by the end of the game. |
+| xpdiffat10 | The difference in xp between a player and their lane opponent at the 10 minute mark. |
+| xpdiffat15 | The difference in xp between a player and their lane opponent at the 15 minute mark. |
+| golddiffat15 | The difference in gold between a player and their lane opponent at the 10 minute mark. |
+| golddiffat15 | The difference in gold between a player and their lane opponent at the 15 minute mark. |
+| earnedgold | The amount of gold that a player earned without including the passive income. |
