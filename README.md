@@ -1,4 +1,4 @@
-# league-of-legends-first-blood
+# Analysis On First Blood's Role in Winning Games at the Pro Play Level
 This is a project on 2022 League of Legends pro play data for DSC 80 at UCSD.
 
 ## Introduction
@@ -46,7 +46,7 @@ steps were taken:
 2.  For each column, do an inplace assignment with the defined function applied to the original column.
 3.  Final result should be a column with all 1s as True, all 0s as False, and NaNs unmodified.
 
-The final step of cleaning was to remove the lines of data that contained the 
+The second step of cleaning was to remove the lines of data that contained the 
 summary for each team. The data was generated in such a way that the first 10 
 rows of data are for each individual player that played in the given match, and 
 the last two rows are the respective summary data for both teams. This 
@@ -58,8 +58,51 @@ that contain data only for the summary rows. In order to do this:
 2.  Querying the data for all rows in which "playername" is not a NaN value.
 3.  Drop columns for which every single value is a NaN value within the queried DataFrame.
 
-### Univariate Analysis
+The last step taken was to query only the columns used in the analyses to allow 
+for easier analysis and quicker viewing. This resulted in a cleaned dataset 
+ready for analysis.
+
+## Univariate Analysis
+### The Importance of First Blood
+In order to answer the question above, one of the most important things to 
+first understand is the importance of a single kill. In pro play, kills are 
+extremely hard to come by. The progression of number of kills during a game 
+hardly changes, which means that a single kill earlyn on in the game often tips 
+the balance of the scale in one direction or the other.
 <iframe src="assets/killsat10bar.html" width=800 height=600 frameBorder=0></iframe>
+Figure 1: The distribution of kills at the 10 minute mark.
+
+<iframe src="assets/killsbar.html" width=800 height=600 frameBorder=0></iframe>
+Figure 2: The distribution of kills at the end of a game.
+
+Examining the figures, we can see that around 40% of all players had end the 
+game with having 1 kill and below. Having a kill, let alone the very first one 
+of the game is extremely impactful.
+
+## Bivariate Analysis
+### The Advantage of Drawing First Blood
+So what exactly does a player gain by drawing first blood in a match? When a 
+player gets a kill in league of legends, the player is rewarded with a certain
+amount of xp and gold as calculated by the game. When a player draws first blood
+they gain a large advantage in terms of xp and gold over their opponent which 
+allows them to snowball, or push their lead, even more against the opposing
+team.
+<iframe src="assets/xpdiffat15hist.html" width=800 height=600 frameBorder=0></iframe>
+Figure 3: The distribution of xp differences conditioned on whether or not a 
+player drew first blood.
+
+<iframe src="assets/golddiffat15hist.html" width=800 height=600 frameBorder=0></iframe>
+Figure 4: The distribution of gold differences conditioned on whether or not a 
+player drew first blood.
+
+The difference in distribution between the two is marked, especially for the 
+difference in gold at 15 distribution. Players who draw the first blood of the
+game typically end the game ahead, meaning that they are able to utilize their 
+early lead to widen the gap between them and their lane opponent.
+
+## Interesting Aggregates
+### Assessing the Advantage of First Blood Among Different Positions
+
 
 ## Assessment of Missingness
 
