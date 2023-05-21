@@ -10,7 +10,7 @@ opponent (opposing player that is the same position as them), and lead their
 team to a win.
 
 As such, it would be interesting to investigate the following: "Are Players who
-Draw 'First Blood' More Likely to Win their Lane, and Consequently the Game? 
+Draw 'First Blood' More Likely to Win their Lane, and Consequently the Game?" 
 
 By looking more carefully at the difference in gold, xp, and kills at various 
 points in the game, we can gain a better sense of how players fare after drawing
