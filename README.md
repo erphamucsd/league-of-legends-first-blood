@@ -62,7 +62,13 @@ The last step taken was to query only the columns used in the analyses to allow
 for easier analysis and quicker viewing. This resulted in a cleaned dataset 
 ready for analysis.
 
-`print(player_data.head().to_markdown(index=False))`
+| gameid                | league   | playoffs   | playername   | position   | firstbloodkill   |   killsat10 |   killsat15 |   kills |   pentakills |   xpdiffat10 |   xpdiffat15 |   golddiffat10 |   golddiffat15 |   earnedgold | result   |
+|:----------------------|:---------|:-----------|:-------------|:-----------|:-----------------|------------:|------------:|--------:|-------------:|-------------:|-------------:|---------------:|---------------:|-------------:|:---------|
+| ESPORTSTMNT01_2690210 | LCK CL   | False      | Soboro       | top        | False            |           0 |           0 |       2 |            0 |          -44 |          345 |             52 |            391 |         7164 | False    |
+| ESPORTSTMNT01_2690210 | LCK CL   | False      | Raptor       | jng        | False            |           1 |           2 |       2 |            0 |          432 |         -275 |            485 |            541 |         5368 | False    |
+| ESPORTSTMNT01_2690210 | LCK CL   | False      | Feisty       | mid        | False            |           0 |           0 |       2 |            0 |           71 |          153 |            162 |           -475 |         5945 | False    |
+| ESPORTSTMNT01_2690210 | LCK CL   | False      | Gamin        | bot        | False            |           1 |           2 |       2 |            0 |          265 |        -1343 |            296 |           -793 |         6835 | False    |
+| ESPORTSTMNT01_2690210 | LCK CL   | False      | Loopy        | sup        | True             |           1 |           1 |       1 |            0 |         -587 |         -497 |            528 |            443 |         2908 | False    |
 
 Figure 1: Preview of the cleaned data.
 
@@ -116,21 +122,39 @@ the jungler and support often benefit less from this.
 
 #### Average Gold Difference at 15 Minutes
 
-`print(table_golddiffat15.to_markdown(index=True))`
+| position   |     False |    True |
+|:-----------|----------:|--------:|
+| bot        | -113.61   | 863.171 |
+| jng        | -106.233  | 551.331 |
+| mid        |  -64.4318 | 650.573 |
+| sup        |  -29.7281 | 516.58  |
+| top        |  -72.0533 | 856.43  |
 
 Figure 6: Average gold difference at 15 minutes by position played, conditioned 
 on whether or not a player drew first blood.
 
 #### Average xp Difference at 15 Minutes
 
-`print(table_xpdiffat15.to_markdown(index=True))`
+| position   |     False |     True |
+|:-----------|----------:|---------:|
+| bot        | -29.8915  | 227.105  |
+| jng        | -27.8088  | 144.322  |
+| mid        | -22.9363  | 231.589  |
+| sup        |  -4.79125 |  83.2567 |
+| top        | -33.1816  | 394.399  |
 
 Figure 7: Average xp difference at 15 minutes by position played, conditioned 
 on whether or not a player drew first blood.
 
 #### Average Kills 
 
-`print(table_kills.to_markdown(index=True))`
+| position   |    False |    True |
+|:-----------|---------:|--------:|
+| bot        | 4.01478  | 6.10206 |
+| jng        | 2.80725  | 4.33991 |
+| mid        | 3.35072  | 5.0479  |
+| sup        | 0.809083 | 2.00598 |
+| top        | 2.65683  | 4.44006 |
 
 Figure 8: Average kills at the end of the game by position played, conditioned 
 on whether or not a player drew first blood.
