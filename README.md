@@ -61,7 +61,7 @@ that contain data only for the summary rows. In order to do this:
 The last step taken was to query only the columns used in the analyses to allow 
 for easier analysis and quicker viewing. This resulted in a cleaned dataset 
 ready for analysis.
-print(player_data.head().to_markdown(index=False))
+'print(player_data.head().to_markdown(index=False))'
 Figure 1: Preview of the cleaned data.
 
 ### Univariate Analysis
@@ -113,17 +113,17 @@ on the advantage drawing first blood and are able to extend it further, while
 the jungler and support often benefit less from this. 
 
 #### Average Gold Difference at 15 Minutes
-print(table_golddiffat15.to_markdown(index=True))
+'print(table_golddiffat15.to_markdown(index=True))'
 Figure 6: Average gold difference at 15 minutes by position played, conditioned 
 on whether or not a player drew first blood.
 
 #### Average xp Difference at 15 Minutes
-print(table_xpdiffat15.to_markdown(index=True))
+'print(table_xpdiffat15.to_markdown(index=True))'
 Figure 7: Average xp difference at 15 minutes by position played, conditioned 
 on whether or not a player drew first blood.
 
 #### Average Kills 
-print(table_kills.to_markdown(index=True))
+'print(table_kills.to_markdown(index=True))'
 Figure 8: Average kills at the end of the game by position played, conditioned 
 on whether or not a player drew first blood.
 
